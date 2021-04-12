@@ -1,0 +1,298 @@
+@font-face {
+    font-family: "Futura";
+    src: url("../font/futura-pt-demi.otf");
+}
+body {
+    padding: 60px 0 0 0;
+    margin: 0;
+    border: 0;
+    font-family: "Futura";
+    font-size: 14px;
+    background-color: #2B222F;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bg-black-af{
+    background-color: #17131F;
+}
+
+.bg-black-2-af {
+    background: #433B47;
+}
+
+.bg-red-af {
+    background-color: #FF1430;
+}
+
+.container{
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1600px;
+    
+}
+
+a.logo, .link a {
+    display: flex;
+}
+
+.header{
+    padding: 15px 0;
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.header .menu-mobile-link {
+    margin-right: 20px;
+}
+
+.header-menu-mobile {
+    background: #595959;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .primary-navbar .header-menu-mobile .close-menu-mobile svg {
+    /* font-size: 12px; */
+    width: 24px;
+}
+
+.header .primary-navbar .header-menu-mobile .close-menu-mobile path {
+    fill: white;
+} 
+
+.header .secondary-navbar .links {
+    display: flex;
+    align-items: center;
+    min-width: 123px;
+    justify-content: space-between;
+}
+
+.link-rounded {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-whatsapp{
+    background-color: #2FB640;
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.products .content {
+    margin-bottom: 26px;
+}
+
+.products .slider {
+    margin-bottom: 10px;
+}
+
+.products .progress {
+    display: block;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size .4s ease-in-out;
+}
+
+.products .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.products a.ver-todos {
+    display: flex;
+    border: 1px solid #FF1430;
+    padding: 18px 61px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    text-transform: uppercase;
+    /* font-size: 14px; */
+}
+
+a.whatsapp-call-to-action.link-whatsapp {
+    position: fixed;
+    right: 15px;
+    bottom: 103px;
+    font-size: 33px;
+    color: white;
+    padding: 0px;
+    width: 59px;
+    height: 59px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* bottom: 30px; */
+}
+
+@media screen and (max-width: 991px){
+    .header .primary-navbar {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        display: none;
+        z-index: 1;
+        
+    }
+    .header .primary-navbar .link a{
+        padding: 0 15px;
+        color: white;
+        font-weight: bold;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .primary-navbar .link:last-child a > span {
+        border-bottom: 0;
+    }
+
+    .header .primary-navbar .link a > span {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid #726C75;
+    }
+
+    .header .primary-navbar .link a.active {
+        background-color: #FD1730;
+    }
+
+    .header .primary-navbar .link a.active > span {
+        border-bottom: 0;
+        
+    }
+
+    .header .primary-navbar .link a > span i {
+        transition: .3s;
+        float: right;
+        position: relative;
+        top: 3px;
+    }
+
+    .header .primary-navbar .link a.active > span i{
+        border-bottom: 0;
+        transform: rotate(-180deg);
+    }
+    .header .primary-navbar .links.filho {
+        padding-left: 17px;
+        display: none;
+    }
+
+    .header .primary-navbar .links.filho .link {
+        padding-right: 0;
+    }
+
+    .tag {
+        padding: 3px 7px;
+        background: red;
+        font-size: 11px;
+        border-radius: 7px;
+        margin-left: 8px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .d-lg-none {
+        display: none;
+    }
+    
+    .header .title-site {
+        margin-right: 40px;
+    }
+    
+    .header .primary-navbar .header-menu-mobile {
+        display: none;
+    
+    }   
+    .header .primary-navbar .links {
+        display: flex;
+        align-items: center;
+        min-width: 575px;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1199px){
+    .header .secondary-navbar {
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .d-xl-none {
+        display: none;
+    }
+    .header .secondary-navbar .links {
+        min-width: 71px;
+    }
+    
+    .header .form-header {
+        margin-left: auto;
+        margin-right: 20px;
+        width: 20%;
+        display: block;
+    }
+    .header .form-header .busca .button-busca {
+        position: absolute;
+        height: 37px;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        padding: 0px 12px;
+        background: none;
+    }
+    .header .form-header .busca .button-busca svg {
+        width: 14px
+    }
+    .header .form-header .busca .button-busca svg path {
+        fill: black;
+    }
+}
+
