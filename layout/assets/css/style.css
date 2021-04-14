@@ -36,6 +36,13 @@ ul{
     list-style: none;
 }
 
+hr {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+    /* bottom: 0px; */
+}
+
 .load-page {
     position:fixed;
     top:0;
@@ -59,6 +66,10 @@ ul{
 
 .bg-red-af {
     background-color: #FF1430;
+}
+
+.container.padding-0 {
+    padding: 0;
 }
 
 .container{
@@ -107,6 +118,10 @@ a.logo, .link a {
 .header .primary-navbar .header-menu-mobile .close-menu-mobile path {
     fill: white;
 } 
+
+.header .secondary-navbar {
+    margin-left: auto;
+}
 
 .header .secondary-navbar .links {
     display: flex;
@@ -170,7 +185,7 @@ a.logo, .link a {
     justify-content: center;
     position: absolute;
     /* bottom: 23px; */
-    top: 56%;
+    top: 50%;
     width: 100%;
 }
 
@@ -199,7 +214,7 @@ a.logo, .link a {
 }*/
 
 .products {
-    padding-top: 11px;
+    padding-top: 23px;
 }
 
 .products .glide__track {
@@ -266,7 +281,7 @@ a.logo, .link a {
 
 .products .button-slide-products {
     position: absolute;
-    bottom: 19%;
+    top: 68%;
     width: 35px;
     height: 35px;
     border-radius: 100%;
@@ -276,15 +291,15 @@ a.logo, .link a {
 }
 
 .products .button-slide-products.left{
-    left: 23px;
+    left: 12px;
 } 
 
 .products .button-slide-products.right {
-    right: 23px
+    right: 12px
 }
 
 .products .progress {
-    width: 98%;
+    width: 90%;
     height: 8px;
     border-radius: 20px;
     background: white;
@@ -297,6 +312,11 @@ a.logo, .link a {
     height: 100%;
     border-radius: 20px;
     transition: .3s;
+}
+
+.products .tag {
+    position: absolute;
+    color: white;
 }
 
 a.whatsapp-call-to-action.link-whatsapp {
@@ -378,64 +398,6 @@ a.whatsapp-call-to-action.link-whatsapp {
         font-size: 11px;
         border-radius: 7px;
         margin-left: 8px;
-    }
-}
-
-@media screen and (min-width: 992px){
-    .d-lg-none {
-        display: none;
-    }
-    
-    .header .title-site {
-        margin-right: 40px;
-    }
-    
-    .header .primary-navbar .header-menu-mobile {
-        display: none;
-    
-    }   
-    .header .primary-navbar .links {
-        display: flex;
-        align-items: center;
-        min-width: 575px;
-        justify-content: space-between;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1199px){
-    .header .secondary-navbar {
-        margin-left: auto;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .d-xl-none {
-        display: none;
-    }
-    .header .secondary-navbar .links {
-        min-width: 71px;
-    }
-    
-    .header .form-header {
-        margin-left: auto;
-        margin-right: 20px;
-        width: 20%;
-        display: block;
-    }
-    .header .form-header .busca .button-busca {
-        position: absolute;
-        height: 37px;
-        border-radius: 0 20px 20px 0;
-        border: none;
-        padding: 0px 12px;
-        background: none;
-    }
-    .header .form-header .busca .button-busca svg {
-        width: 14px
-    }
-    .header .form-header .busca .button-busca svg path {
-        fill: black;
     }
 }
 

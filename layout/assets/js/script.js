@@ -15,11 +15,11 @@ $(document).ready(function(){
 
     $(".load-page").delay(2000).fadeToggle();
 
-    $(".button-slide-products.right").on("click", function(){
+    $(".button-slide-products.right").on("click", function(e){
       loadProgressBar(true)
     });
 
-    $(".button-slide-products.left").on("click", function(){
+    $(".button-slide-products.left").on("click", function(e){
       loadProgressBar(false)
     });
 
@@ -59,7 +59,7 @@ function loadProgressBar(ref, firstLoad = false){
         var displayPrev = "none";
         var displayNext = "block";
       }
-      porcentageByProduct -= porcentageByProduct;
+      porcentageByProduct -= 100/slidesProduct;
     }
 
     $(".button-slide-products.left").css("display", displayPrev);
