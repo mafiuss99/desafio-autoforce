@@ -2,6 +2,17 @@
     font-family: "Futura";
     src: url("../font/futura-pt-demi.otf");
 }
+
+@font-face {
+    font-family: "Futura PT Book";
+    src: url("../font/futura-pt-book.otf");
+}
+
+@font-face {
+    font-family: "Futura PT Extra Bold";
+    src: url("../font/futura-pt-extra-bold.otf");
+}
+
 body {
     padding: 60px 0 0 0;
     margin: 0;
@@ -25,6 +36,19 @@ ul{
     list-style: none;
 }
 
+.load-page {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:999;
+    background:black;
+    display: flex;
+    justify-content: center;
+    align-items:center
+}
+
 .bg-black-af{
     background-color: #17131F;
 }
@@ -40,8 +64,7 @@ ul{
 .container{
     padding: 0 15px;
     margin: 0 auto;
-    max-width: 1600px;
-    
+    max-width: 320px;
 }
 
 a.logo, .link a {
@@ -105,44 +128,129 @@ a.logo, .link a {
     background-color: #2FB640;
 }
 
-.banner {
+.banner .glide__slide,
+.products .spot-image  {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;}
+
+.banner .glide__slide img,
+.products .spot-image img {
+    width: 100%
+}
+
+.products .spot-image {
+    margin-bottom: 13px;
+}
+
+.banner .glide__bullets {
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    /*position: relative;
+    bottom: 23px;*/
+    align-items: center;
+}
+
+.banner .glide__controls button{
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 8px;
+    font-size: 16px;
+    display: flex;
+}
+
+.banner .glide__controls button i {
+    color: white;
+}
+
+.banner .slide-controls {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    /* bottom: 23px; */
+    top: 56%;
+    width: 100%;
+}
+
+.banner .glide__bullets button{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.banner .glide__bullets button:not(.end-slide) i {
+    font-weight: 100;
+    color: white;
+    font-size: 10px;
+}
+
+.banner .glide__bullets .glide__bullet--active:not(.end-slide) i {
+    font-weight: 700;
+}
+
+.spots_slide {
+    margin-bottom: 29px;
+}
+
+/*.spots_slide li.glide__slide {
+    width: 160px !important;
+}*/
+
+.products {
+    padding-top: 11px;
+}
+
+.products .glide__track {
+    margin-bottom: 22px;
+}
+
+.products .spot-body {
+    text-align: center;
+}
+
+.products .spot-body h4,
+.products .spot-body .price span  {
+    margin: 0;
+    font-size: 14px;
+}
+
+.products .spot-body h4{
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #EDEDE3;
+    font-family: "Futura PT Extra Bold";
+}
+
+.products .spot-body .price {
     margin-bottom: 20px;
 }
 
-.banner img {
-    width: 100%;
+.products .spot-body .price span {
+    font-family: "Futura PT Book" ;
+    margin-bottom: 20px;
+    color: #D0CED1;
 }
 
-.products .content {
-    margin-bottom: 26px;
+.products .spot-button {
+    text-align: center;
 }
 
-.products .slider {
-    margin-bottom: 10px;
+.products .spot-button a{
+    font-size: 12px;
+    color: #EDEDE3;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.products .progress {
-    display: block;
-    width: 100%;
-    height: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    background-image: linear-gradient(to right, black, black);
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    transition: background-size .4s ease-in-out;
-}
-
-.products .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
+.products .spot-button i{
+    color: #FF1430;
+    margin-right: 8px;
 }
 
 .products a.ver-todos {
@@ -156,10 +264,45 @@ a.logo, .link a {
     /* font-size: 14px; */
 }
 
+.products .button-slide-products {
+    position: absolute;
+    bottom: 19%;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: none;
+    opacity: 0.8;
+    background: #FAFAFA;
+}
+
+.products .button-slide-products.left{
+    left: 23px;
+} 
+
+.products .button-slide-products.right {
+    right: 23px
+}
+
+.products .progress {
+    width: 98%;
+    height: 8px;
+    border-radius: 20px;
+    background: white;
+    margin: 0 auto;
+}
+
+.products .progress .progress-bar{
+    background: rgb(254,179,36);
+    background: linear-gradient(90deg, rgba(254,179,36,1) 0%, rgba(253,45,50,1) 100%);
+    height: 100%;
+    border-radius: 20px;
+    transition: .3s;
+}
+
 a.whatsapp-call-to-action.link-whatsapp {
     position: fixed;
-    right: 15px;
-    bottom: 103px;
+    right: 23px;
+    bottom: 23px;
     font-size: 33px;
     color: white;
     padding: 0px;

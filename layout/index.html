@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="assets/css/style.css">    
     <!-- Fontawesome -->
     <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
-    <!-- Slick -->
-    <link rel="stylesheet" href="assets/css/slick/slick.css">
+    <!-- Glide -->
+    <link rel="stylesheet" href="assets/css/glide/glide.core.min.css">
 
     <!-- Scripts-->
     <!-- Jquery -->
     <script type="text/javascript" src="assets/js/jquery/jquery-3.6.0.min.js"  defer></script>
     <!-- Scripts Próprios -->
     <script type="text/javascript"  src="assets/js/script.js" defer></script>
-    <!-- Slick -->
-    <script type="text/javascript"  src="assets/js/slick/slick.min.js" defer></script>
+    <!-- Glide -->
+    <script type="text/javascript"  src="assets/js/glide/glide.min.js" defer></script>
 
 </head>
 
 <body>  
+    <div class="load-page bg-black-af">
+        <img src="assets/svg/logo.svg" alt="">
+    </div>
     <header class="header bg-black-af" id="header">
         <div class="container">
             <a class="menu-mobile-link" id="toggleMenu">
@@ -98,28 +101,93 @@
         
     </header>
     <section class="banner">
-        <img src="assets/img/bannermobile.png" alt="">
+        <div class="banner_home">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide" style="background-image: url('assets/img/bannermobile.png');">
+                    <img src="assets/img/bg.png" alt="">
+                </li>
+                <li class="glide__slide" style="background-image: url('assets/img/bannermobile.png');">
+                    <img src="assets/img/bg.png" alt="">
+                </li>
+                <li class="glide__slide" style="background-image: url('assets/img/bannermobile.png');">
+                    <img src="assets/img/bg.png" alt="">
+                </li>
+                <li class="glide__slide" style="background-image: url('assets/img/bannermobile.png');">
+                    <img src="assets/img/bg.png" alt="">
+                </li>
+              </ul>
+              <div class="slide-controls">
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"><i class="fas fa-circle"></i></button>
+                    <button class="glide__bullet" data-glide-dir="=1"><i class="fas fa-circle"></i></button>
+                    <button class="glide__bullet" data-glide-dir="=2"><i class="fas fa-circle"></i></button>
+                    <button class="glide__bullet" data-glide-dir="=3"><i class="fas fa-circle"></i></button>
+                  </div>
+                  <div data-glide-el="controls" class="glide__controls">
+                    <button data-glide-dir=">>"><i class="fas fa-long-arrow-alt-right"></i></button>
+                  </div>
+              </div>
+              
+            </div>
+            
+            
+          </div>
     </section>
     <section class="products">
         <div class="container">
-            <div class="content">
-                <div class="slider">
-                  <div>
-                    <div class="image">
-                      <img src="https://kenwheeler.github.io/slick/img/lazyfonz2.png" alt="">
-                    </div> <!-- end image -->
+            <div class="spots_slide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="spot">
+                            <div class="spot-image" style="background-image: url('assets/img/products/1.png');">
+                                <img src="assets/img/products/bg.png" alt="">
+                            </div>
+                            <div class="spot-body">
+                                <h4 href="javscript:void(0)">
+                                    Cronos
+                                </h4>
+                                <div class="price">
+                                    <span>A partir de R$ 129.990</span>
+                                </div>
+                            </div>
+                            <div class="spot-button">
+                                <a href=""><i class="fas fa-chevron-right"></i><span>Saiba Mais</span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="spot">
+                            <div class="spot-image" style="background-image: url('assets/img/products/2.png');">
+                                <img src="assets/img/products/bg.png" alt="">
+                            </div>
+                            <div class="spot-body">
+                                <h4 href="javscript:void(0)">
+                                    Cronos
+                                </h4>
+                                <div class="price">
+                                    <span>A partir de R$ 129.990</span>
+                                </div>
+                            </div>
+                            <div class="spot-button">
+                                <a href=""><i class="fas fa-chevron-right"></i><span>Saiba Mais</span></a>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                  <div data-glide-el="controls" class="glide__controls">
+                    <button class="button-slide-products left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+                    <button class="button-slide-products right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
                   </div>
-                  <div>
-                    <div class="image">
-                      <img src="https://kenwheeler.github.io/slick/img/lazyfonz4.png" alt="">
-                    </div> <!-- end image -->
-                  </div>
-                </div> <!-- end slider -->
-                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                  <span class="slider__label sr-only">
                 </div>
-                </span>
-              </div> 
+                <div class="progress">
+                    <div class="progress-bar">
+                        
+                    </div>
+                </div>
+            </div>
+                
               <a href="" class="ver-todos">ver Todos os Modelos</a>
         </div>
         
