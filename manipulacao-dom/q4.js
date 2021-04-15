@@ -29,10 +29,7 @@ function openModalPalmeiras(){
     let close_button = document.createElement("div");
     setAttributes(close_button, {"width":"100%", "padding:":"10px 0"});
     let close_button_link = document.createElement("a");
-    close_button_link.addEventListener('click', function(){
-        $("#modal_palmeiras").remove();
-        $(".divVideoPalmeiras").remove()
-    });
+    
 
     div_modal.appendChild(close_button);
     div_modal.appendChild(logoPalmeiras);
@@ -52,6 +49,11 @@ function openModalPalmeiras(){
 
     body.appendChild(micromodal_slide);
     body.appendChild(divVideoPalmeiras);
+
+    close_button_link.addEventListener('click', function(){
+        $("#modal_palmeiras").remove();
+        $(".hino-palmeiras").remove()
+    });
 }
 
 openModalPalmeiras()
