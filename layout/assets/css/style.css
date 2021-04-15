@@ -185,7 +185,7 @@ a.logo, .link a {
     justify-content: center;
     position: absolute;
     /* bottom: 23px; */
-    top: 50%;
+    top: 54%;
     width: 100%;
 }
 
@@ -281,7 +281,7 @@ a.logo, .link a {
 
 .products .button-slide-products {
     position: absolute;
-    top: 68%;
+    top: 76%;
     width: 35px;
     height: 35px;
     border-radius: 100%;

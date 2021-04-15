@@ -48,20 +48,18 @@ function loadProgressBar(ref, firstLoad = false){
     
   }else{
     if(ref == true){
-      porcentageByProduct += porcentageByProduct;
+      porcentageByProduct += initialWidth;
       if(porcentageByProduct == 100){
         var displayPrev = "block";
         var displayNext = "none";
       }
-
     }else{
       if(porcentageByProduct == initialWidth){
         var displayPrev = "none";
         var displayNext = "block";
       }
-      porcentageByProduct -= 100/slidesProduct;
     }
-
+    
     $(".button-slide-products.left").css("display", displayPrev);
     $(".button-slide-products.right").css("display", displayNext);
 

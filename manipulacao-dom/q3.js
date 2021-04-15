@@ -31,9 +31,9 @@ setAttributes(selectModelo, {"name":"Modelos"});
 for(var i = 0; i < arrayModelos.length; i++){
     let optionModelo = document.createElement("option");
     optionModelo.innerHTML = arrayModelos[i].value;
-    if(i == 0){
+    /*if(i == 0){
         optionModelo.setAttribute("selected", "selected");
-    }
+    }*/
     setAttributes(optionModelo, {"value":arrayModelos[i].value});
     selectModelo.appendChild(optionModelo)
 }
@@ -46,6 +46,7 @@ selectvalueLink = document.createElement("button");
 setAttributes(selectvalueLink, {"style":"display: flex;height: 100%;align-items: center;justify-content: space-between;background: none;border: none;width: 100%;"});
 
 spanValue = document.createElement("span");
+spanValue.classList.add("title-modelo");
 spanValue.innerHTML = selectModelo.value;
 
 iconToggle = document.createElement("i");
@@ -58,7 +59,7 @@ setAttributes(dropdown, {"style":"margin-top: 5px;width: 282.48px;background: wh
 dropdown.style.display = 'none';
 
 inputDorpdown = document.createElement("input");
-setAttributes(inputDorpdown, {"type":"name", "style":"width: 100%;height: 50px;border: none;border-bottom: 1px solid;padding:13px;font-size:17px", 'onkeydown':'listenModelos(true);'});
+setAttributes(inputDorpdown, {"type":"name", "style":"width: 100%;height: 50px;border: none;border-bottom: 1px solid #efefef;padding:13px;font-size:17px", 'onkeyup':'listenModelos(true);'});
 
 listDropdown = document.createElement("ul");
 setAttributes(listDropdown, {"id":"itemsMarcas", "style":"list-style:none;padding-left:25px;margin-bottom:5px;max-height: 85px;overflow: auto"});
@@ -101,46 +102,99 @@ function toggle(element){
 
     if(display == 'none'){
         element.style.display = 'block';
+        iconToggle.setAttribute('style', 'transform:rotate(180deg);transition:.3s')
+
     }else{
-        element.style.display = 'none'
+        element.style.display = 'none';
+        iconToggle.setAttribute('style', 'transform:rotate(0deg);transition:.3s')
     }
 }
 
-function listenModelos(search=false){
+function listenModelos(search = false){
     $("#itemsMarcas").html('');
-    console.log('alou');
-    
-    for(var i = 0; i < arrayModelos.length; i++){
-        if(search=true){
-            let item = arrayModelos[i].value;
-            if( item.indexOf($('.dropdown-marcas').value) != undefined){
-                let itemMarca = document.createElement("li");
-                let itemMarcaLink = document.createElement("a");
-        
-                itemMarcaLink.innerHTML = arrayModelos[i].value;
-                itemMarca.appendChild(itemMarcaLink);
-        
-                if(i == 0){
-                    itemMarcaLink.classList.add("selected");
-                }
-        
-                if(i != arrayModelos.length - 1){
-                    setAttributes(itemMarca, {"style":"border-bottom:1px solid"});
-                }
 
-                setAttributes(itemMarcaLink, {"data-value":arrayModelos[i].value, "href":"javscript:void(0)", "style":"color:black;display:flex;height: 45px;align-items: center"});
-                listDropdown.appendChild(itemMarca);
+    for(var i = 0; i < arrayModelos.length; i++ ){
+        let item = arrayModelos[i].value;
+        let inputValue = document.querySelector('.dropdown-marcas input').value;
+
+        if(search == true){
+            let resultado = in_str(item,inputValue);
+
+            if(resultado == true){
+                montarLista(i)
             }
+        }else{
+            montarLista(i)
         }
+    } 
 
-        
+    if($("#itemsMarcas li").length == 0){
+        $("#itemsMarcas").html("<p style='font-size:19px;margin-bottom:0'>Nenhum resultado encontrado</p>")
     }
-
-    
-   
 }
 
+function montarLista(i){
+    let itemMarca = document.createElement("li");
+    let itemMarcaLink = document.createElement("a");
+        
+    if(i == 0){
+        itemMarcaLink.classList.add("value-selected");
+        var display = 'block';
+    }else{
+        var display = 'none'
+    }
 
+    if(i != arrayModelos.length - 1){
+        setAttributes(itemMarca, {"style":"border-bottom:1px solid #efefef"});
+    }
+
+    itemMarcaLink.innerHTML = '<svg width="20px" style="margin-right: 10px;display:'+display+'"aria-hidden="true" focusable="false" data-prefix="far" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="green" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path></svg>' + arrayModelos[i].value;
+    
+    itemMarca.appendChild(itemMarcaLink);
+    
+    setAttributes(itemMarcaLink, {"data-value":arrayModelos[i].value, "href":"javascript:void(0)", "style":"color: black; display: flex; height: 45px; align-items: center;transition:.5s", "onmouseover":"effectOnOver($(this))", "onmouseout":"effectOnOut($(this))", "onclick":"updateValue(this, $(this))"});
+    
+    listDropdown.appendChild(itemMarca);
+}
+
+function effectOnOver(element){
+    $(".value-selected").children('svg').css('display', 'none');
+
+    element.css('padding-left', '20px').css('text-decoration', 'none');
+    element.children('svg').css('display', 'block')
+}
+
+function effectOnOut(element){
+    $(".value-selected").children('svg').css('display', 'block');
+
+    if(element.attr('class') != "value-selected"){
+        element.css('padding-left', '0')
+        element.children('svg').css('display', 'none')
+    }
+}
+
+function updateValue(value, valueJquery){
+    $('.value-selected').removeClass('value-selected');
+
+    selectModelo.value = value.getAttribute('data-value');
+    spanValue.innerHTML = value.getAttribute('data-value');
+    svg = value.children;
+
+    valueJquery.children('svg').css('display', 'block');
+
+    valueJquery.addClass('value-selected');
+
+}
+
+function in_str(string, value) {
+    string = string.toLowerCase();
+    value = value.toLowerCase();
+
+    if (string.indexOf(value) != -1)
+        return true;
+    else
+        return false;
+}
 
 /* Construindo Select */
 createSelect();
